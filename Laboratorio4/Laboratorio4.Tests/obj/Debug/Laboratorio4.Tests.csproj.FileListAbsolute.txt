@@ -1,0 +1,2 @@
+C:\Users\juani\Source\Repos\Laboratorio4\Laboratorio4\Laboratorio4.Tests\obj\Debug\Laboratorio4.Tests.csproj.AssemblyReference.cache
+C:\Users\juani\Source\Repos\Laboratorio4\Laboratorio4\Laboratorio4.Tests\obj\Debug\Laboratorio4.Tests.csproj.CoreCompileInputs.cache
