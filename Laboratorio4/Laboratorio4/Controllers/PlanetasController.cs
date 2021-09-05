@@ -7,12 +7,40 @@ namespace Laboratorio4.Controllers
 {
     public class PlanetasController : Controller
     {
-        // GET: Planetas
         public ActionResult listadoDePlanetas()
         {
             PlanetasHandler accesoDatos = new PlanetasHandler();
             ViewBag.planetas = accesoDatos.obtenerTodosLosPlanetas();
             return View();
+        }
+
+        public ActionResult crearPlaneta()
+        {
+            return View();
+        }
+
+        public ActionResult crearPlaneta(PlanetaModel planeta)
+        {
+            ViewBag.ExitoAlCrear = false;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    PlanetasHandler accesoDatos = new PlanetasHandler();
+                    ViewBag.ExitoAlCrear = accesoDatos.crearPlaneta(planeta);
+                    if (ViewBag.ExitoAlCrear)
+                    {
+                        ViewBag.Message = "El planeta " + planeta.nombre + " fue creado con éxito :)";
+                        ModelState.Clear();
+                    }
+                }
+                return View();
+            }
+            catch
+            {
+                ViewBag.Message = "Algo salió mal y no fue posible crear el planeta :(";
+                return View();
+            }
         }
     }
 }
