@@ -18,7 +18,7 @@ namespace Laboratorio4.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public ActionResult crearPlaneta(PlanetaModel planeta)
         {
             ViewBag.ExitoAlCrear = false;
