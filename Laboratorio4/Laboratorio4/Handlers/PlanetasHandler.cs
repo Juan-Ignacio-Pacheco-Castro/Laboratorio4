@@ -83,8 +83,8 @@ namespace Laboratorio4.Handlers
         public bool modificarPlaneta(PlanetaModel planeta)
         {
             string consulta = "UPDATE Planeta SET archivoPlaneta=@archivo, tipoArchivo=@tipoArchivo, " +
-                              "nombrePlaneta=@nombre, numeroAnillos=@numeroAnillos, tipoPlaneta=@tipoPlaneta" +
-                              "WHERE planetaID=@planetaId ";
+                              "nombrePlaneta=@nombre, numeroAnillos=@numeroAnillos, tipoPlaneta=@tipoPlaneta " +
+                              "WHERE planetaId=@planetaId ";
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
             SqlDataAdapter adaptadorParaTabla = new SqlDataAdapter(comandoParaConsulta);
 

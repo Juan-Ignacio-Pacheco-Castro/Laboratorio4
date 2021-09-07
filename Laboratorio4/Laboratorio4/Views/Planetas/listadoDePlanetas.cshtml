@@ -10,6 +10,9 @@
 <body>
     <h1>Listado de planetas</h1>
 
+
+
+
     @foreach (var planeta in @ViewBag.planetas)
     {
         <hr />
@@ -17,6 +20,15 @@
         <p>Nombre: @planeta.nombre</p>
         <p>Tipo: @planeta.tipo</p>
         <p>Numero de anillos: @planeta.numeroAnillos</p>
+
+        @Html.ActionLink("Modificar información", "editarPlaneta",
+                      new { identificador = planeta.id },
+                      new
+                      {
+                          @class = "btn btn alert-info",
+                          @onclick = "return confirm('¿Quiere modificar este planeta?');"
+                      }
+        );
         <hr />
     }
 </body>
