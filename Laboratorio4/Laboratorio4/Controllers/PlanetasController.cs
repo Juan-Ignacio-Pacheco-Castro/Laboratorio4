@@ -81,5 +81,20 @@ namespace Laboratorio4.Controllers
                 return View();
             }
         }
+
+        [HttpGet]
+        public FileResult accederArchivo(int identificador)
+        {
+            try
+            {
+                PlanetasHandler accesoDatos = new PlanetasHandler();
+                var tupla = accesoDatos.descargarContenido(identificador);
+                return File(tupla.Item1, tupla.Item2);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

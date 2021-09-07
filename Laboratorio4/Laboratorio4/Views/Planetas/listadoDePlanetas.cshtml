@@ -29,6 +29,13 @@
                           @onclick = "return confirm('¿Quiere modificar este planeta?');"
                       }
         );
+        @Html.ActionLink("Ver Contenido Digital", "accederArchivo",
+                      new { identificador = planeta.id },
+                      new
+                      {
+                          @class = "btn btn-success",
+                      }
+        );
         <hr />
     }
 </body>
