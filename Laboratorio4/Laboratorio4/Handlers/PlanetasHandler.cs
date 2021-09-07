@@ -66,7 +66,6 @@ namespace Laboratorio4.Handlers
             string consulta = "INSERT INTO Planeta (archivoPlaneta, tipoArchivo, nombrePlaneta, numeroAnillos, tipoPlaneta) " +
                               "VALUES (@archivo, @tipoArchivo, @nombre, @numeroAnillos, @tipoPlaneta) ";
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
-            SqlDataAdapter adaptadorParaTabla = new SqlDataAdapter(comandoParaConsulta);
 
             comandoParaConsulta.Parameters.AddWithValue("@archivo", obtenerBytes(planeta.archivo));
             comandoParaConsulta.Parameters.AddWithValue("@tipoArchivo", planeta.archivo.ContentType);
@@ -86,7 +85,6 @@ namespace Laboratorio4.Handlers
                               "nombrePlaneta=@nombre, numeroAnillos=@numeroAnillos, tipoPlaneta=@tipoPlaneta " +
                               "WHERE planetaId=@planetaId ";
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
-            SqlDataAdapter adaptadorParaTabla = new SqlDataAdapter(comandoParaConsulta);
 
             comandoParaConsulta.Parameters.AddWithValue("@archivo", obtenerBytes(planeta.archivo));
             comandoParaConsulta.Parameters.AddWithValue("@tipoArchivo", planeta.archivo.ContentType);
@@ -108,7 +106,6 @@ namespace Laboratorio4.Handlers
             string contentType;
             string consulta = "SELECT archivoPlaneta, tipoArchivo FROM Planeta WHERE planetaId = @planetaId";
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
-            SqlDataAdapter adaptadorParaTabla = new SqlDataAdapter(comandoParaConsulta);
             comandoParaConsulta.Parameters.AddWithValue("@planetaId", id);
             conexion.Open();
 

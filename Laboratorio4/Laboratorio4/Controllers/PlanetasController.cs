@@ -74,7 +74,7 @@ namespace Laboratorio4.Controllers
             {
                 PlanetasHandler accesoDatos = new PlanetasHandler();
                 accesoDatos.modificarPlaneta(planeta);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("listadoDePlanetas");
             }
             catch
             {
